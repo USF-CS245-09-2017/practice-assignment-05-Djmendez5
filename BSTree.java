@@ -1,12 +1,12 @@
 //import org.w3c.dom.Node;
 
 public class BSTree {
-	
+	String order = "";
 	private class BSTNode {
 		public Comparable data; 
 		public BSTNode left; 
 		public BSTNode right; 
-
+	
 		BSTNode(Comparable newdata) {
 			data = newdata;
 		}
@@ -130,15 +130,24 @@ public String toStringPreOrder() {
 	return toStringPreorder(root);
 }
 public String toStringPreorder(BSTNode node) {
-	String order="";
-	if(node != null) {
-		order = order+ " " + node.data;
-		toStringPreorder(node.left);
-		toStringPreorder(node.right);
+		if(node ==null) {
+			return "";
+		}
+		else
+	        {	 
+	        //System.out.print(node.data + " ");
+	        order = order + node.data + " ";
+	       
+	       toStringPreorder(node.left);
+	 
+	        
+	        toStringPreorder(node.right);
+	    }
 	
-	}
+	
 	return order;
-	
-}
+
+	    
+	    }
 
 }
