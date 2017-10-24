@@ -2,6 +2,7 @@
 
 public class BSTree {
 	String order = "";
+	String order2 = "";
 	private class BSTNode {
 		public Comparable data; 
 		public BSTNode left; 
@@ -118,13 +119,15 @@ public String toStringInOrder() {
 	return toStringInOrder(root);
 }
 private String toStringInOrder(BSTNode node) {
-	String order="";
+
 	if (node != null) {
 		toStringInOrder(node.left);
-		order = order + " " + node.data;
+		order2 = order2 + " " + node.data;
 		toStringInOrder(node.right);
+	//System.out.println("asdasdsad");
 	}
-return order;
+	System.out.println(order2);
+return order2;
 }
 public String toStringPreOrder() {
 	return toStringPreorder(root);
@@ -136,16 +139,16 @@ public String toStringPreorder(BSTNode node) {
 		else
 	        {	 
 	        //System.out.print(node.data + " ");
-	        order = order + node.data + " ";
-	       
-	       toStringPreorder(node.left);
-	 
-	        
+			//System.out.println("s");
+			order = order+ node.data + " ";
+			toStringPreorder(node.left);
 	        toStringPreorder(node.right);
-	    }
+	        
+	       
+	        }
+		 return order;
 	
 	
-	return order;
 
 	    
 	    }
